@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Análisis de Mercado</title>
+    <!-- URL CORREGIDA DE CHEERPJ 3.0 -->
+    <script src="https://cjrtnc.leaningtech.com/3.0/cj3loader.js"></script>
+</head>
+<body style="margin: 0; height: 100vh; background-color: #f0f0f0;">
+    <script>
+        async function correrApp() {
+            // Inicializa la máquina virtual
+            await cheerpjInit();
+            
+            // Crea el lienzo para la interfaz gráfica (ancho, alto)
+            cheerpjCreateDisplay(1100, 700);
+            
+            // Llama a tu archivo jar
+            await cheerpjRunJar("/app/Programa Java.jar");
+        }
+        correrApp();
+    </script>
+</body>
+</html>
