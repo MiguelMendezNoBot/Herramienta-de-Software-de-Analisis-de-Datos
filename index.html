@@ -4,13 +4,31 @@
     <meta charset="UTF-8">
     <title>Análisis de Mercado</title>
     <script src="https://cjrtnc.leaningtech.com/3.0/cj3loader.js"></script>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #2b2b2b;
+        }
+        #appContainer {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
-<body style="margin: 0; height: 100vh; background-color: #f0f0f0;">
+<body>
+    <div id="appContainer"></div>
+
     <script>
         async function correrApp() {
             await cheerpjInit();
             
-            cheerpjCreateDisplay(1100, 700);
+            // -1, -1 hace que CheerpJ se ajuste al 100% del contenedor padre
+            const container = document.getElementById("appContainer");
+            cheerpjCreateDisplay(-1, -1, container);
             
             await cheerpjRunJar("/app/Herramienta-de-Software-de-Analisis-de-Datos/Programa_Java.jar");
         }
